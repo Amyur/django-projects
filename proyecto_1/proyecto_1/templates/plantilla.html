@@ -1,0 +1,27 @@
+<html>
+    {% include "superior/barra.html" %}
+    <body>
+        <h1>
+            Esto es toda una mentira, mi nombre es {{nombre_mio}} {{apellido_mio}}
+        </h1>
+        <h2>
+            {% if nombre_mio == "Amy" %}
+                <p>
+                    "Ese es el mejor"
+                </p>
+            {% else %}
+                <p>
+                    "Ese es malo"
+                </p>
+            {% endif %}
+        </h2>
+        <ul>{% if temas %}
+                {% for i in temas %}
+                    <li>{{i|first}}</li> {# el | es un filtro aplicado a i #}
+                {% endfor %}
+            {% else %}
+                <p>No hay nada que mostrar</p>
+            {% endif %}
+        </ul>
+    </body>
+</html>
